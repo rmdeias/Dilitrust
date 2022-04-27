@@ -21,10 +21,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $email;
 
     #[ORM\Column(type: 'simple_array')]
-    private $roles = [];
+    private $roles = ['ROLE_USER'];
 
     #[ORM\Column(type: 'string')]
     private $password;
+
+    #[ORM\Column(type: 'boolean')]
+    private $enable = 1;
 
     public function getId(): ?int
     {
@@ -94,5 +97,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getEnable(): ?bool
+    {
+        return $this->enable;
+    }
+
+    public function setEnable(bool $enable): self
+    {
+        $this->enable = $enable;
+
+        return $this;
     }
 }
