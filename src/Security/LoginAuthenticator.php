@@ -48,7 +48,9 @@ class LoginAuthenticator extends AbstractLoginFormAuthenticator
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
-        if($token->getRoleNames() == 'ROLE_ADMIN'){
+        //dd( );
+        if( in_array('ROLE_ADMIN', $token->getRoleNames())){
+
             return new RedirectResponse('/admin');
         }
         return null;
