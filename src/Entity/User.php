@@ -15,19 +15,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
-    private $id;
+    private int $id;
 
     #[ORM\Column(type: 'string', length: 180, unique: true)]
-    private $email;
+    private string $email;
 
     #[ORM\Column(type: 'simple_array')]
-    private $roles = ['ROLE_USER'];
+    private array $roles = ['ROLE_USER'];
 
     #[ORM\Column(type: 'string')]
-    private $password;
+    private string $password;
 
     #[ORM\Column(type: 'boolean')]
-    private $enable = 1;
+    private bool $enable = true;
 
     public function getId(): ?int
     {
@@ -62,8 +62,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getRoles(): array
     {
         $roles = $this->roles;
-        // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
     }
@@ -99,15 +97,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
-    public function getEnable(): ?bool
+    /**
+     * @return bool
+     */
+    public function isEnable(): bool
     {
         return $this->enable;
     }
 
-    public function setEnable(bool $enable): self
+    /**
+     * @param bool $enable
+     */
+    public function setEnable(bool $enable): void
     {
         $this->enable = $enable;
-
-        return $this;
     }
 }
