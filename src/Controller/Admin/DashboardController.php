@@ -3,8 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\User;
-
-use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use App\Entity\Document;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -18,6 +17,7 @@ class DashboardController extends AbstractDashboardController
     #[Route('/backoffice', name: 'backoffice')]
     public function index(): Response
     {
+
         return $this->render('admin/index.html.twig');
 
         // Option 1. You can make your dashboard redirect to some common page of your backend
@@ -47,6 +47,7 @@ class DashboardController extends AbstractDashboardController
     {
         //yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Users', 'fas fa-users', User::class)->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Documents', 'fas fa-folder', Document::class);
     }
 
 }
