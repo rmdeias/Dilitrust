@@ -26,7 +26,6 @@ class EasyAdminDocumentUserIdDate implements EventSubscriberInterface
     {
         return [
             BeforeEntityPersistedEvent::class => ['addIdUser'],
-            //BeforeEntityUpdatedEvent::class => ['updateUser'], //surtout utile lors d'un reset de mot passe plutôt qu'un réel update, car l'update va de nouveau encrypter le mot de passe DEJA encrypté ...
         ];
     }
 

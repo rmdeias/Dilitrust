@@ -1,0 +1,16 @@
+# config/services.yaml
+parameters:
+  app.path.product_images: /uploads/images/products
+  # ...
+
+# config/packages/vich_uploader.yaml
+vich_uploader:
+  # ...
+  db_driver: orm
+  mappings:
+    product_images:
+      uri_prefix:         '%app.path.product_images%'
+      upload_destination: '%kernel.project_dir%/public%app.path.product_images%'
+      delete_on_update: false
+      delete_on_remove: true
+      namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

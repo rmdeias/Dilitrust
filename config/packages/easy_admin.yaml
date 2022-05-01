@@ -1,0 +1,23 @@
+# config/packages/easy_admin.yaml
+easy_admin:
+  entities:
+    Document:
+      # ...
+      list:
+        fields:
+          - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+      form:
+        fields:
+          - { property: 'imageFile', type: 'vich_image' }
+          - { property: 'contractFile', type: 'vich_file' }
+      # ...
+      show:
+        fields:
+          - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+    User:
+      # ...
+      list:
+        fields:
+          # ...
+          - { property: 'contract', template: 'contract.html.twig' }
+          - { property: 'contract', template: 'contract.html.twig', base_path: '%app.path.user_contracts%' }
