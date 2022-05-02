@@ -11,15 +11,28 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class EasyAdminUserPassword implements EventSubscriberInterface
 {
+    /**
+     * @var EntityManagerInterface
+     */
     private $entityManager;
+    /**
+     * @var UserPasswordHasherInterface
+     */
     private $passwordEncoder;
 
+    /**
+     * @param EntityManagerInterface $entityManager
+     * @param UserPasswordHasherInterface $passwordEncoder
+     */
     public function __construct(EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordEncoder)
     {
         $this->entityManager = $entityManager;
         $this->passwordEncoder = $passwordEncoder;
     }
 
+    /**
+     * @return \string[][]
+     */
     public static function getSubscribedEvents()
     {
         return [
@@ -28,6 +41,10 @@ class EasyAdminUserPassword implements EventSubscriberInterface
         ];
     }
 
+    /**
+     * @param BeforeEntityUpdatedEvent $event
+     * @return void
+     */
     public function updateUser(BeforeEntityUpdatedEvent $event)
     {
         $entity = $event->getEntityInstance();
@@ -38,6 +55,10 @@ class EasyAdminUserPassword implements EventSubscriberInterface
         $this->setPassword($entity);
     }
 
+    /**
+     * @param BeforeEntityPersistedEvent $event
+     * @return void
+     */
     public function addUser(BeforeEntityPersistedEvent $event)
     {
         $entity = $event->getEntityInstance();

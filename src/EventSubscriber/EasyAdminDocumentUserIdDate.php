@@ -12,9 +12,19 @@ class EasyAdminDocumentUserIdDate implements EventSubscriberInterface
 {
 
 
+    /**
+     * @var EntityManagerInterface
+     */
     private $entityManager;
+    /**
+     * @var Security
+     */
     private $security;
 
+    /**
+     * @param EntityManagerInterface $entityManager
+     * @param Security $security
+     */
     public function __construct(EntityManagerInterface $entityManager, Security $security)
     {
         $this->entityManager = $entityManager;
@@ -22,6 +32,9 @@ class EasyAdminDocumentUserIdDate implements EventSubscriberInterface
 
     }
 
+    /**
+     * @return \string[][]
+     */
     public static function getSubscribedEvents()
     {
         return [
@@ -29,6 +42,10 @@ class EasyAdminDocumentUserIdDate implements EventSubscriberInterface
         ];
     }
 
+    /**
+     * @param BeforeEntityPersistedEvent $event
+     * @return void
+     */
     public function addIdUser(BeforeEntityPersistedEvent $event)
     {
         $entity = $event->getEntityInstance();

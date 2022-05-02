@@ -6,8 +6,10 @@ use Symfony\Component\Security\Core\User\UserCheckerInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 class UserChecker implements UserCheckerInterface
 {
+
     /**
-     * @inheritDoc
+     * @param UserInterface $user
+     * @return void
      */
     public function checkPreAuth(UserInterface $user): void
     {
@@ -17,10 +19,11 @@ class UserChecker implements UserCheckerInterface
         if (!$user->isEnable()) {
             throw new EnabledUserException();
         }
-        // TODO: Implement checkPreAuth() method.
     }
+
     /**
-     * @inheritDoc
+     * @param UserInterface $user
+     * @return void
      */
     public function checkPostAuth(UserInterface $user): void
     {

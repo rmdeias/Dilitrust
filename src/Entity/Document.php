@@ -13,25 +13,31 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: DocumentRepository::class)]
 class Document
 {
+    /**
+     * @var int
+     */
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
     private int $id;
 
-    /*
-    #[ORM\Column(type: 'string', length: 255)]
-    private string $file;*/
-/*
-    #[ORM\Column(type: 'datetime')]
-    private $updatedAt;*/
 
+    /**
+     * @var object
+     */
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'documents')]
     #[ORM\JoinColumn(nullable: false)]
     private object $user;
 
+    /**
+     * @var string|null
+     */
     #[ORM\Column(type: 'string', length: 255)]
     private ?string $image = null;
 
+    /**
+     * @var
+     */
     #[ORM\Column(type: 'datetime')]
     private $lastModification;
 
@@ -41,17 +47,27 @@ class Document
      */
     private $imageFile;
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
 
+    /**
+     * @return \DateTimeInterface|null
+     */
     public function getLastModification(): ?\DateTimeInterface
     {
         return $this->lastModification;
     }
 
+    /**
+     * @param \DateTimeInterface $lastModification
+     * @return $this
+     */
     public function setLastModification(\DateTimeInterface $lastModification): self
     {
         $this->lastModification = $lastModification;
@@ -59,11 +75,26 @@ class Document
         return $this;
     }
 
+    /**
+     * @return User|null
+     */
     public function getUser(): ?User
     {
         return $this->user;
     }
 
+    /**
+     * @return string
+     */
+    public function getUserMail(): string
+    {
+        return $this->user->getEmail();
+    }
+
+    /**
+     * @param User|null $user
+     * @return $this
+     */
     public function setUser(?User $user): self
     {
         $this->user = $user;
@@ -71,29 +102,35 @@ class Document
         return $this;
     }
 
+    /**
+     * @param File|null $image
+     * @return void
+     */
     public function setImageFile(File $image = null)
     {
         $this->imageFile = $image;
-
-        // VERY IMPORTANT:
-        // It is required that at least one field changes if you are using Doctrine,
-        // otherwise the event listeners won't be called and the file is lost
-        ///if ($image) {
-            // if 'updatedAt' is not defined in your entity, use another property
-            //$this->updatedAt = new \DateTime('now');
-        //}
     }
 
+    /**
+     * @return File
+     */
     public function getImageFile()
     {
         return $this->imageFile;
     }
 
+    /**
+     * @param $image
+     * @return void
+     */
     public function setImage($image)
     {
         $this->image = $image;
     }
 
+    /**
+     * @return string|null
+     */
     public function getImage()
     {
         return $this->image;

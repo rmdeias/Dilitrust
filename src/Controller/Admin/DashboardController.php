@@ -11,9 +11,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class DashboardController extends AbstractDashboardController
 {
 
+    /**
+     * @return Response
+     */
     #[Route('/backoffice', name: 'backoffice')]
     public function index(): Response
     {
@@ -36,12 +40,18 @@ class DashboardController extends AbstractDashboardController
         //return $this->render('some/path/my-dashboard.html.twig');
     }
 
+    /**
+     * @return Dashboard
+     */
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
             ->setTitle('Dilitrust');
     }
 
+    /**
+     * @return iterable
+     */
     public function configureMenuItems(): iterable
     {
         //yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
