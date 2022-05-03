@@ -62,7 +62,6 @@ class DocumentCrudController extends AbstractCrudController
         $documentDetail = Action::new('document_detail')
             ->linkToCrudAction('documentDetail');
                 return $actions->add(Crud::PAGE_INDEX, $documentDetail);
-
     }
 
     /**
@@ -72,7 +71,7 @@ class DocumentCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         if(in_array('ROLE_ADMIN',  $this->getUser()->getRoles())) {
-            yield IntegerField::new('userMail')
+            yield EmailField::new('userMail')
                 ->setLabel('User');
         }
 
@@ -90,7 +89,6 @@ class DocumentCrudController extends AbstractCrudController
             ->onlyOnIndex();
         yield DateTimeField::new('LastModification')
             ->hideOnForm();
-
     }
 
     /**
@@ -111,6 +109,5 @@ class DocumentCrudController extends AbstractCrudController
        }else {
            return $this->render('admin/index.html.twig');
        }
-
     }
 }
