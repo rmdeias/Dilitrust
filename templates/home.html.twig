@@ -2,7 +2,30 @@
 
 {% block title %}Home{% endblock %}
 {% block body %}
-    <div >
-      <p class="p-3 mb-2 bg-primary text-white">INFO</p>
-    </div>
+{% block main %}
+<div>
+    <h1 class="p-3 m-0 bg-primary text-white">{% trans %}Welcome{% endtrans %}</h1>
+    <div class="p-5 bg-light">
+        <p>{% trans %}Before starting here are some explanations on the logic of the project.{% endtrans %}<br>
+            {% trans %}I took advantage of this "Challenge" to familiarize myself with the easyadmin bundle and strengthen my knowledge of symfony by trying new features.{% endtrans %}
+        </p>
+        <p>{% trans %}The project consists of two entities User and Document.<br>A user contains email, password, role and enable(to deactivate a user).{% endtrans %} </br>{% trans %}There are two roles:{% endtrans %}</p>
+        <ul>
+            <li><p>{% trans %}the ROLE_USER who has the right if it is not disabled to connect to the backoffice to post, consult, modify and delete documents.{% endtrans %}</br>user@gmail.com pass: User123!</p></li>
+            <li><p>{% trans %}the ROLE_ADMIN which has the same rights as the ROLE_USER plus the possibility of user management, and see which user has posted which document.{% endtrans %}</br>admin@gmail.com pass: Admin123!</p></li>
+        </ul>
+        <p>{% trans %}a document can be consulted, deleted or modified{% endtrans %} </p>
+        <ul>
+            <li><p>{% trans %}Image type documents (JPG, PNG...) can be previewed.{% endtrans %}</p></li>
+            <li><p>{% trans %}Script-type documents can be viewed by clicking on "detail document"{% endtrans %}</p></li>
+        </ul>
+        <p>{% trans %}You can create a new user or login{% endtrans %} </p>
+        <ul>
+            <li><a href="/login">{% trans %}Login{% endtrans %}</a></li>
+            <li><a href="/register">{% trans %}Registration{% endtrans %}</a></li>
+        </ul>
+
+    <p>{% trans %}ps: sorry for the quality of the rendering, I ran out of time for the project to be more complete front and back{% endtrans %}</p>
+
+{% endblock %}
 {% endblock %}

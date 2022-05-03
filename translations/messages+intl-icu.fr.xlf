@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="dDUw20Q" resname="Please sign in">
+        <source>Please sign in</source>
+        <target>Veuillez vous connecter</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="v9QCsvb" resname="Sign in">
+        <source>Sign in</source>
+        <target>Connection</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register">
+        <source>Register</source>
+        <target>Inscription</target>
+      </trans-unit>
+      <trans-unit id="SWM2jM." resname="menu.choose_language">
+        <source>menu.choose_language</source>
+        <target>Choisir un langage</target>
+      </trans-unit>
+      <trans-unit id="YSHyAf3" resname="Welcome">
+        <source>Welcome</source>
+        <target>Bienvenue</target>
+      </trans-unit>
+      <trans-unit id="sqkZjmu" resname="Before starting here are some explanations on the logic of the project.">
+        <source>Before starting here are some explanations on the logic of the project.</source>
+        <target>Avant de commencer voici quelques explications sur la logique du projet.</target>
+      </trans-unit>
+      <trans-unit id="GB2b0BO" resname="I took advantage of this &quot;Challenge&quot; to familiarize myself with the easyadmin bundle and strengthen my knowledge of symfony by trying new features.">
+        <source>I took advantage of this "Challenge" to familiarize myself with the easyadmin bundle and strengthen my knowledge of symfony by trying new features.</source>
+        <target>J'ai profité de ce "Challenge" pour me familiariser avec le bundle easyadmin et renforcer mes connaissances en symfony en essayant de nouvelles fonctionnalités.</target>
+      </trans-unit>
+      <trans-unit id="qA0yycF" resname="The project consists of two entities User and Document.&lt;br&gt;A user contains email, password, role and enable(to deactivate a user).">
+        <source>The project consists of two entities User and Document.&lt;br&gt;A user contains email, password, role and enable(to deactivate a user).</source>
+        <target><![CDATA[Le projet est constitué de deux entités User et Document.<br>Un utilisateur contient email, password, role et enable(pour désactiver un utilisateur).]]></target>
+      </trans-unit>
+      <trans-unit id="00K9Tg8" resname="There are two roles:">
+        <source>There are two roles:</source>
+        <target>Il y a deux roles :</target>
+      </trans-unit>
+      <trans-unit id="yLCEOFj" resname="the ROLE_USER who has the right if it is not disabled to connect to the backoffice to post, consult, modify and delete documents.">
+        <source>the ROLE_USER who has the right if it is not disabled to connect to the backoffice to post, consult, modify and delete documents.</source>
+        <target>le ROLE_USER qui a le droit s'il n'est pas désactivé de se connecter en backoffice pour poster,consulter,modifier et supprimer des documents.</target>
+      </trans-unit>
+      <trans-unit id="r1otWAn" resname="the ROLE_ADMIN which has the same rights as the ROLE_USER plus the possibility of user management, and see which user has posted which document.">
+        <source>the ROLE_ADMIN which has the same rights as the ROLE_USER plus the possibility of user management, and see which user has posted which document.</source>
+        <target>le ROLE_ADMIN qui a les memes droits que le ROLE_USER plus la possibilité gestion d'utilisateur, et voir quel utilisateur a posté quel document.</target>
+      </trans-unit>
+      <trans-unit id="NM.KM9x" resname="a document can be consulted, deleted or modified">
+        <source>a document can be consulted, deleted or modified</source>
+        <target>un document peut-etre consulté, supprimé ou modifié</target>
+      </trans-unit>
+      <trans-unit id="ainmmMU" resname="Image type documents (JPG, PNG...) can be previewed.">
+        <source>Image type documents (JPG, PNG...) can be previewed.</source>
+        <target>Les document de type image(JPG,PNG...) peuvent etre prévisualisés.</target>
+      </trans-unit>
+      <trans-unit id="sKwVXr2" resname="Script-type documents can be viewed by clicking on &quot;detail document&quot;">
+        <source>Script-type documents can be viewed by clicking on "detail document".</source>
+        <target>Les document de type script peuvent etre consultés en cliquant sur "document détail".</target>
+      </trans-unit>
+      <trans-unit id="D5dBD8g" resname="You can create a new user or login">
+        <source>You can create a new user or login.</source>
+        <target>Vous pouvez créer un nouvel utilisateur ou vous connecter.</target>
+      </trans-unit>
+      <trans-unit id="nWMiwfT" resname="Login">
+        <source>Login</source>
+        <target>Connection</target>
+      </trans-unit>
+      <trans-unit id="x5Pg2aH" resname="Registration">
+        <source>Registration</source>
+        <target>Inscription</target>
+      </trans-unit>
+      <trans-unit id="nQF55RS" resname="ps: sorry for the quality of the rendering, I ran out of time for the project to be more complete front and back">
+        <source>ps: sorry for the quality of the rendering, I ran out of time for the project to be more complete front and back</source>
+        <target>ps: désolé pour ce rendu le temps m'a manqué pour un projet plus complet en front and back</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

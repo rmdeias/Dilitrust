@@ -18,6 +18,5 @@ easy_admin:
       # ...
       list:
         fields:
+
           # ...
-          - { property: 'contract', template: 'contract.html.twig' }
-          - { property: 'contract', template: 'contract.html.twig', base_path: '%app.path.user_contracts%' }

@@ -6,6 +6,8 @@
 parameters:
     app.path.user_contracts: /uploads/files/user/contracts
     app.path.product_images: /uploads/product/images
+    app.locales: [en, fr]
+    locale: en
 services:
     # default configuration for services in *this* file
     _defaults:
